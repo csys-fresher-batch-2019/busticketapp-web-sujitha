@@ -1,0 +1,85 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+ 
+  
+  <servlet>
+  	<servlet-name>LoginDetails</servlet-name>
+  	<display-name>LoginDetails</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.LoginDetails</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Registration</servlet-name>
+  	<display-name>Registration</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.Registration</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DisplayBusList</servlet-name>
+  	<display-name>DisplayBusList</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.DisplayBusList</servlet-class>
+ </servlet>
+  <servlet>
+  	<servlet-name>DisplayBookedUserDetails</servlet-name>
+  	<display-name>DisplayBookedUserDetails</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.DisplayBookedUserDetails</servlet-class>
+ </servlet>
+ 
+  
+  
+  <servlet>
+  	<servlet-name>BusBooking</servlet-name>
+  	<display-name>BusBooking</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.BusBooking</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CancelTicketServlet</servlet-name>
+  	<display-name>CancelTicketServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.CancelTicketServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginDetails</servlet-name>
+  	<url-pattern>/LoginDetails</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Registration</servlet-name>
+  	<url-pattern>/Registration</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DisplayBusList</servlet-name>
+  	<url-pattern>/DisplayBusList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DisplayBookedUserDetails</servlet-name>
+  	<url-pattern>/DisplayBookedUserDetails</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BusBooking</servlet-name>
+  	<url-pattern>/BusBooking</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CancelTicketServlet</servlet-name>
+  	<url-pattern>/CancelTicketServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
