@@ -13,6 +13,7 @@ import com.sujitha.busticketapp.model.UserDetails;
 
 public class LoginDetails extends HttpServlet {
 	private static final Logger log = Logger.getInstance();
+	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -33,7 +34,7 @@ public class LoginDetails extends HttpServlet {
 
 			else {
 				response.sendRedirect("Login.jsp?errorMessage=Invalid Username or Password");
-			}
+				}
 		} catch (Exception e) {
 			log.error(e);
 		}

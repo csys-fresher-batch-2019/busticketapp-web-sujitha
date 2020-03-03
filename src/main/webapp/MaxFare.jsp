@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="com.sujitha.busticketapp.model.BusList"%>
-<%@ page import="com.sujitha.busticketapp.dao.BusListDAO"%> 
-<%@ page import="com.sujitha.busticketapp.dao.impl.BusListDAOImpl" %> 
-<%@ page import ="com.sujitha.busticketapp.dto.BusesDetails"%>
-<%@ page import="java.util.List" %>  
-<!DOCTYPE html>
+    <%@ page import="com.sujitha.busticketapp.dao.impl.OperatorsDetailsDAOImpl" %>
+    <%@ page import="com.sujitha.busticketapp.dto.Buses" %>
+    <%@ page import="java.util.List" %>
+<!DOCTYPE html PUBLIC>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -15,21 +13,20 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<h2>BusList</h2>
- 
- <br>
- <br>
- <%
- BusListDAOImpl bl= new BusListDAOImpl();
-List<BusesDetails> bus = (List<BusesDetails>)request.getAttribute("Bus_list");
+<form>
+<%
+OperatorsDetailsDAOImpl bl= new OperatorsDetailsDAOImpl();
+List<Buses> bus = (List<Buses>)request.getAttribute("Max_Fare_list");
  %>
- <br>
- <br>
- <table class="table table-bordered"> 
+<br/>
+<br/>
+<table class="table table-bordered"> 
  <thead >
  <tr>
  <th>BusNumber</th>
  <th>BusName</th>
+ <th>From</th>
+ <th>To</th>
  <th>TotalSeats</th>
  <th>SeatType</th>
  <th>Model</th>
@@ -41,14 +38,14 @@ List<BusesDetails> bus = (List<BusesDetails>)request.getAttribute("Bus_list");
  <th></th>
  </tr>
  </thead>
- 
- <%
+  <%
  if ( bus != null){
- for(BusesDetails b:bus){
+ for(Buses b:bus){
  %><tr>
- 
- <td><%=b.getBusNum()  %></td>
+  <td><%=b.getBusNum()  %></td>
  <td><%=b.getBusName() %></td>
+ <td><%=b.getFromLocation() %></td>
+ <td><%=b.getToLocation() %></td>
  <td><%=b.getNoOfSeats()%></td>
  <td><%=b.getSeatType() %></td>
  <td><%=b.getBusModel() %></td>
@@ -60,11 +57,11 @@ List<BusesDetails> bus = (List<BusesDetails>)request.getAttribute("Bus_list");
 <td><a href="BookingDetail.jsp?busNo=<%=b.getBusNum() %>" class="btn btn-success">Book</a></td>
 
  </tr><% 
-   HttpSession sess=request.getSession();
-	      sess.setAttribute("busNo",b.getBusNum());
-	      sess.setAttribute("amount",b.getFair());
- }}%>
- </table>
- </form>
+ HttpSession sess=request.getSession();
+ sess.setAttribute("busNo",b.getBusNum());
+ sess.setAttribute("amount",b.getFair());
+}}%>
+</table>
+</form>
 </body>
 </html>

@@ -1,12 +1,14 @@
 package com.sujitha;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sujitha.busticketapp.DbException;
 import com.sujitha.busticketapp.dao.impl.BookingDetailDAOImpl;
@@ -19,7 +21,8 @@ public class BusBooking extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Booking b = new Booking();
-		int row = 0;
+		int rows = 0;
+		
 		BusListDAOImpl bl = new BusListDAOImpl();
 		int UserId = Integer.parseInt(request.getParameter("userid"));
 		b.setUserId(UserId);
@@ -33,27 +36,26 @@ public class BusBooking extends HttpServlet {
 		b.setGenderPreference(Preferences);
 		LocalDate BookingDate = LocalDate.parse(request.getParameter("date"));
 		b.setBookedDate(BookingDate);
-		int Amount = Integer.parseInt(request.getParameter("amount"));
-		b.setAmount(Amount);
+		//int Amount = Integer.parseInt(request.getParameter("amount"));
+		//b.setAmount(Amount);
+		PrintWriter out= response.getWriter();
 		BookingDetailDAOImpl bg = new BookingDetailDAOImpl();
+		int tot=0;
 		try {
-			row = bg.addUserBookingDetails(b);
-			if (row == 1) {
-				response.sendRedirect("ticketsummary.jsp");
-			}
-
-		} catch (DbException e) {
-			e.printStackTrace();
-		}
-		if (row == 0) {
-			try {
-				bg.bookUnfilledSeats(b);
-				response.sendRedirect("ticketsummary.jsp");
-			} catch (DbException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+			int a=bg.getPrice(b.getBusNum());
+			out.print(a);
+			tot=b.getSeatNo()*a;
+			b.setAmount(tot);
+			HttpSession s=request.getSession();
+			s.setAttribute("tot_amnt", tot);
+			rows=bg.addTickets(b);
+			System.out.println(rows);
+			response.sendRedirect("ticketsummary.jsp");
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		
 	}
 
+}
 }

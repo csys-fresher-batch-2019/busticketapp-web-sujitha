@@ -26,10 +26,10 @@ Gender
 <input type="radio" name="gender" value="F">female
 <br/>
 <br/>
-Enter Mobile No:<input type="number" name="mobileno" required/>
+Enter Mobile No:<input type="number" name="mobileno"required/>
 <br/>
 <br/>
-Enter Password:<input type="password" name="password"placeholder="password" required/>
+Enter Password:<input type="password" name="password"placeholder="password" minlength="8" required/>
 <br/>
 <br/>
 <button type="submit">submit</button>

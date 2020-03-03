@@ -52,6 +52,78 @@
   	<description></description>
   	<servlet-class>com.sujitha.CancelTicketServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AdminLogin</servlet-name>
+  	<display-name>AdminLogin</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.AdminLogin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Operators</servlet-name>
+  	<display-name>Operators</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.Operators</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>OpDetailsDisplay</servlet-name>
+  	<display-name>OpDetailsDisplay</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.OpDetailsDisplay</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>OpDetailsAdd</servlet-name>
+  	<display-name>OpDetailsAdd</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.OpDetailsAdd</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>OpBusDisplay</servlet-name>
+  	<display-name>OpBusDisplay</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.OpBusDisplay</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BusName</servlet-name>
+  	<display-name>BusName</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.BusName</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MaxFareser</servlet-name>
+  	<display-name>MaxFareser</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.MaxFareser</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MinFareSer</servlet-name>
+  	<display-name>MinFareSer</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.MinFareSer</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AcServ</servlet-name>
+  	<display-name>AcServ</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.AcServ</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>NonAcServ</servlet-name>
+  	<display-name>NonAcServ</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.NonAcServ</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>HighRatingServ</servlet-name>
+  	<display-name>HighRatingServ</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.HighRatingServ</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LowRatingServ</servlet-name>
+  	<display-name>LowRatingServ</display-name>
+  	<description></description>
+  	<servlet-class>com.sujitha.LowRatingServ</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>LoginDetails</servlet-name>
@@ -81,5 +153,53 @@
   <servlet-mapping>
   	<servlet-name>CancelTicketServlet</servlet-name>
   	<url-pattern>/CancelTicketServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminLogin</servlet-name>
+  	<url-pattern>/AdminLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Operators</servlet-name>
+  	<url-pattern>/Operators</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>OpDetailsDisplay</servlet-name>
+  	<url-pattern>/OpDetailsDisplay</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>OpDetailsAdd</servlet-name>
+  	<url-pattern>/OpDetailsAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>OpBusDisplay</servlet-name>
+  	<url-pattern>/OpBusDisplay</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BusName</servlet-name>
+  	<url-pattern>/BusName</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MaxFareser</servlet-name>
+  	<url-pattern>/MaxFareser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MinFareSer</servlet-name>
+  	<url-pattern>/MinFareSer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AcServ</servlet-name>
+  	<url-pattern>/AcServ</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NonAcServ</servlet-name>
+  	<url-pattern>/NonAcServ</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HighRatingServ</servlet-name>
+  	<url-pattern>/HighRatingServ</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LowRatingServ</servlet-name>
+  	<url-pattern>/LowRatingServ</url-pattern>
   </servlet-mapping>
 </web-app>

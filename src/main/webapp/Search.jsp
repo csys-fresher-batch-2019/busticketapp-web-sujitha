@@ -10,15 +10,31 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<%
-HttpSession sess=request.getSession(false);
-Integer amount1=(Integer)sess.getAttribute("tot_amnt");
-%>
+<h2>Search By</h2>
 <br>
+<h5>BusName</h5>
+<a href ="BusName.jsp">Search</a> 
+
 <br>
-Amount:<input type="number" name="amount" value="<%=amount1%>" readonly required/>
+<h5>Location</h5>
+<a href ="Routes.jsp">Location</a> 
+
 <br>
+<h5>Fare</h5>
+<a href ="MaxFareser">Max</a> 
+<a href ="MinFareSer">Min</a> 
 <br>
-Successfully Booked Ticket.
+<h5>Bus Model</h5>
+ <a href="Ac.jsp">Ac</a></td>
+ <a href="NonAc.jsp">Non-Ac</a></td>
+<br>
+<h5>Ratings</h5>
+ <a href="HighRatingServ"> High</a></td>
+ <a href="LowRatingServ"> Low</a></td>
+ <br>
+ <h5>Operators</h5>
+  <a href="OpDetailsDisplay"> Operators</a></td>
+ 
+
 </body>
 </html>

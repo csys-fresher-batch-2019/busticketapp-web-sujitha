@@ -1,6 +1,7 @@
 package com.sujitha;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -8,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.sujitha.busticketapp.DbException;
 import com.sujitha.busticketapp.dao.impl.BusListDAOImpl;
 import com.sujitha.busticketapp.dao.impl.BusRoutesDAOImpl;
@@ -22,6 +25,7 @@ public class DisplayBusList extends HttpServlet {
 			throws ServletException, IOException {
 		String from = request.getParameter("FromLocation");
 		String to = request.getParameter("ToLocation");
+		LocalDate Date = LocalDate.parse(request.getParameter("date"));
 		System.out.println("Display:" + from + "-" + to);
 		BusRoutesDAOImpl bi = new BusRoutesDAOImpl();
 		try {
@@ -32,6 +36,9 @@ public class DisplayBusList extends HttpServlet {
 			list1 = bli.allBusListDetails(routeNo);
 			request.setAttribute("Bus_list", list1);
 			System.out.println(list1);
+			HttpSession sess = request.getSession();
+			sess.setAttribute("date", Date);
+			sess.setAttribute("route_no", routeNo);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("BusListDisplay.jsp");
 			dispatcher.forward(request, response);
 		} catch (DbException e) {

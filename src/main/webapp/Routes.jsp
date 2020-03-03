@@ -54,8 +54,9 @@ for(BusRoutes d:tolocation){
 %>
 <br>
 <br>
-
 </datalist>
+Enter Date:<input type="date" name="date" required>
+<br/>
 <button type="submit">submit</button>
 <br>
 <br>
